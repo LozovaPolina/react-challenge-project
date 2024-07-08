@@ -9,12 +9,12 @@ export default function Challenges() {
     queryKey: ["challenges"],
     queryFn: fetchChallenges,
   });
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     dispatch(challengesActions.setChellenges(data));
-  //   }
-  // }, [isSuccess, data]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(challengesActions.setChallenges({ challenges: data }));
+    }
+  }, [isSuccess, data]);
   console.log(data);
-  return <h1>fdsfs</h1>;
+  return <div id='challenges'>{isPending && <p>Loading challenges</p>}</div>;
 }

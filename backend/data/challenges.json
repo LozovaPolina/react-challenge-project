@@ -6,7 +6,8 @@
     "date": "2024-09-25",
     "time": "18:00",
     "location": "Innovation Lounge, New York, NY",
-    "image": "playing-guitar.jpg"
+    "image": "playing-guitar.jpg",
+    "status": "active"
   },
   {
     "id": "e2",
@@ -15,7 +16,8 @@
     "description": "Explore the city and discover hidden gems while completing fun web development challenges.",
     "date": "2024-10-07",
     "time": "10:00",
-    "location": "playing-guitar.jpg"
+    "location": "playing-guitar.jpg",
+    "status": "active"
   },
   {
     "id": "e3",
@@ -24,7 +26,8 @@
     "date": "2024-05-21",
     "time": "16:30",
     "location": "Empowerment Hall, Seattle, WA",
-    "image": "playing-guitar.jpg"
+    "image": "playing-guitar.jpg",
+    "status": "active"
   },
   {
     "id": "e4",
@@ -42,6 +45,7 @@
     "date": "3222-12-31",
     "time": "12:32",
     "location": "dsadasdasda",
-    "image": "playing-guitar.jpg"
+    "image": "playing-guitar.jpg",
+    "status": "active"
   }
 ]

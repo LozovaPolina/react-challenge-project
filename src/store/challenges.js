@@ -10,8 +10,9 @@ const challengesSlice = createSlice({
   name: 'chellanges',
   initialState: initalChallengesState,
   reducers: {
-    setChellenges(state, payload) {
-      const findItems = (status) => payload.chellenges.filter((item) => item.status === status);
+    setChallenges(state, action) {
+
+      const findItems = (status) => action.payload.challenges.filter((item) => item.status === status);
 
       state.active = findItems('active');
       state.completed = findItems('completed');
