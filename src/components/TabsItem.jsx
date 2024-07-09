@@ -1,4 +1,11 @@
-export default function TabsItem({ isSelected, onSelect, children }) {
+import Badge from "./Badge";
+
+export default function TabsItem({
+  isSelected,
+  onSelect,
+  children,
+  badgeCaption,
+}) {
   return (
     <li>
       <button
@@ -6,7 +13,7 @@ export default function TabsItem({ isSelected, onSelect, children }) {
         onClick={onSelect}
       >
         {children}
-        {/* <Badge caption={badgeCaption}></Badge> */}
+        <Badge caption={badgeCaption}></Badge>
       </button>
       {isSelected && <div className='active-tab-indicator' />}
     </li>
