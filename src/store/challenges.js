@@ -4,6 +4,7 @@ const initalChallengesState = {
   active: [],
   completed: [],
   failed: [],
+  selectedType: 'active',
 }
 
 const challengesSlice = createSlice({
@@ -18,6 +19,9 @@ const challengesSlice = createSlice({
       state.completed = findItems('completed');
       state.failed = findItems('failed');
     },
+    setSelectedTab(state, action) {
+      state.selectedType = action.payload.selectedType
+    }
   }
 });
 

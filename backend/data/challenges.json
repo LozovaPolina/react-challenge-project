@@ -6,17 +6,17 @@
     "date": "2024-09-25",
     "time": "18:00",
     "location": "Innovation Lounge, New York, NY",
-    "image": "playing-guitar.jpg",
+    "image": "playing-guitar.png",
     "status": "active"
   },
   {
     "id": "e2",
     "title": "City Hunt: Web Dev Edition",
-    "image": "buzzing-city.jpg",
+    "image": "playing-guitar.png",
     "description": "Explore the city and discover hidden gems while completing fun web development challenges.",
     "date": "2024-10-07",
     "time": "10:00",
-    "location": "playing-guitar.jpg",
+    "location": "playing-guitar.png",
     "status": "active"
   },
   {
@@ -26,7 +26,7 @@
     "date": "2024-05-21",
     "time": "16:30",
     "location": "Empowerment Hall, Seattle, WA",
-    "image": "playing-guitar.jpg",
+    "image": "playing-guitar.png",
     "status": "active"
   },
   {
@@ -36,7 +36,8 @@
     "date": "2023-11-03",
     "time": "18:30",
     "location": "Learning Labs, Austin, TX",
-    "image": "playing-guitar.jpg"
+    "image": "playing-guitar.png",
+    "status": "active"
   },
   {
     "id": "1313",
@@ -45,7 +46,7 @@
     "date": "3222-12-31",
     "time": "12:32",
     "location": "dsadasdasda",
-    "image": "playing-guitar.jpg",
+    "image": "playing-guitar.png",
     "status": "active"
   }
 ]

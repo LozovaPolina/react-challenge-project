@@ -44,6 +44,7 @@ app.get('/challenges', async (req, res) => {
       image: challenge.image,
       date: challenge.date,
       location: challenge.location,
+      status: challenge.status,
     })),
   });
 });
