@@ -1,4 +1,24 @@
+import { useMutation } from "@tanstack/react-query";
+import { changeChallengeStatus, queryClient } from "../util/http";
+
 export default function ChallengeItem({ challenge }) {
+  const { mutate, isPending } = useMutation({
+    mutationFn: changeChallengeStatus,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["challenges"]);
+    },
+  });
+
+  const onCompleteHandler = () => {
+    if (challenge.status === "completed") return;
+    mutate({ status: "completed", id: challenge.id });
+  };
+
+  const onFailHandler = () => {
+    if (challenge.status === "failed") return;
+    mutate({ status: "failed", id: challenge.id });
+  };
+
   return (
     <li>
       <article className='challenge-item'>
@@ -8,8 +28,16 @@ export default function ChallengeItem({ challenge }) {
             <h2>{challenge.title}</h2>
             {/* <p>Complete until {formattedDate}</p> */}
             <p className='challenge-item-actions'>
-              <button className='btn-negative'>Mark as failed</button>
-              <button>Mark as completed</button>
+              <button
+                disabled={isPending}
+                className='btn-negative'
+                onClick={onFailHandler}
+              >
+                Mark as failed
+              </button>
+              <button disabled={isPending} onClick={onCompleteHandler}>
+                Mark as completed
+              </button>
             </p>
           </div>
         </header>

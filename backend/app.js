@@ -110,21 +110,16 @@ app.post('/challenges', async (req, res) => {
   res.json({ challenge: newchallenge });
 });
 
-app.put('/challenges/:id', async (req, res) => {
-  const { id } = req.params;
-  const { challenge } = req.body;
+app.put('/challenges', async (req, res) => {
 
-  if (!challenge) {
+  const { status, id } = req.body;
+  console.log(status, id)
+  if (!id) {
     return res.status(400).json({ message: 'challenge is required' });
   }
 
   if (
-    !challenge.title?.trim() ||
-    !challenge.description?.trim() ||
-    !challenge.date?.trim() ||
-    !challenge.time?.trim() ||
-    !challenge.image?.trim() ||
-    !challenge.location?.trim()
+    !status?.trim() || !id?.trim()
   ) {
     return res.status(400).json({ message: 'Invalid data provided.' });
   }
@@ -132,22 +127,23 @@ app.put('/challenges/:id', async (req, res) => {
   const challengesFileContent = await fs.readFile('./data/challenges.json');
   const challenges = JSON.parse(challengesFileContent);
 
-  const challengeIndex = challenges.findIndex((challenge) => challenge.id === id);
+  const challengeIndex = challenges.findIndex((item) => item.id === id);
 
   if (challengeIndex === -1) {
     return res.status(404).json({ message: 'challenge not found' });
   }
 
   challenges[challengeIndex] = {
-    id,
-    ...challenge,
-  };
+    ...challenges[challengeIndex],
+    status,
+  }
 
   await fs.writeFile('./data/challenges.json', JSON.stringify(challenges));
 
   setTimeout(() => {
     res.json({ challenge: challenges[challengeIndex] });
   }, 1000);
+
 });
 
 app.delete('/challenges/:id', async (req, res) => {

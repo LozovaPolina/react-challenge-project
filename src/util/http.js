@@ -17,3 +17,22 @@ export async function fetchChallenges({ signal }) {
   const { challenges } = await res.json();
   return challenges;
 }
+
+export async function changeChallengeStatus({ status, id }) {
+  const response = await fetch(`http://localhost:3000/challenges`, {
+    method: 'PUT',
+    body: JSON.stringify({ status, id }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    const error = new Error('An error occurred while updating the chellenge');
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  return response.json();
+}

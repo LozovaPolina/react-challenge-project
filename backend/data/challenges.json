@@ -7,7 +7,7 @@
     "time": "18:00",
     "location": "Innovation Lounge, New York, NY",
     "image": "playing-guitar.png",
-    "status": "active"
+    "status": "failed"
   },
   {
     "id": "e2",
@@ -17,7 +17,7 @@
     "date": "2024-10-07",
     "time": "10:00",
     "location": "playing-guitar.png",
-    "status": "active"
+    "status": "failed"
   },
   {
     "id": "e3",
@@ -27,7 +27,7 @@
     "time": "16:30",
     "location": "Empowerment Hall, Seattle, WA",
     "image": "playing-guitar.png",
-    "status": "active"
+    "status": "completed"
   },
   {
     "id": "e4",
@@ -47,6 +47,6 @@
     "time": "12:32",
     "location": "dsadasdasda",
     "image": "playing-guitar.png",
-    "status": "active"
+    "status": "completed"
   }
 ]

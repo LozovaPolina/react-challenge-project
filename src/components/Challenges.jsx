@@ -7,27 +7,33 @@ import ChallengesTabs from "./ChallengesTabs";
 import ChallengeItem from "./ChallengesItem";
 
 export default function Challenges() {
-  const { data, isPending, isError, error, isSuccess } = useQuery({
+  const { data } = useQuery({
     queryKey: ["challenges"],
     queryFn: fetchChallenges,
+    staleTime: 60 * 3000,
   });
+
   const { challenges } = useSelector((state) => ({
     challenges: state.challenges[state.challenges.selectedType],
   }));
-  console.log(challenges);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    if (isSuccess) {
+    if (data) {
       dispatch(challengesActions.setChallenges({ challenges: data }));
     }
-  }, [isSuccess, data]);
+  }, [data, dispatch]);
 
   return (
     <div id='challenges'>
       <ChallengesTabs>
-        {challenges.map((item) => {
-          return <ChallengeItem key={item.id} challenge={item}></ChallengeItem>;
-        })}
+        <ol className='challenge-items'>
+          {challenges.map((item) => {
+            return (
+              <ChallengeItem key={item.id} challenge={item}></ChallengeItem>
+            );
+          })}
+        </ol>
       </ChallengesTabs>
     </div>
   );
