@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { challengesActions } from "../store/challenges";
 import ChallengesTabs from "./ChallengesTabs";
 import ChallengeItem from "./ChallengesItem";
+import LoadingIndicator from "./UI/LoadingIndicator";
+import ErrorBlock from "./UI/ErrorBlock";
 
 export default function Challenges() {
-  const { data } = useQuery({
+  const { data, isPending, isError, error, isSuccess } = useQuery({
     queryKey: ["challenges"],
     queryFn: fetchChallenges,
     staleTime: 60 * 3000,
@@ -25,16 +27,35 @@ export default function Challenges() {
   }, [data, dispatch]);
 
   return (
-    <div id='challenges'>
-      <ChallengesTabs>
-        <ol className='challenge-items'>
-          {challenges.map((item) => {
-            return (
-              <ChallengeItem key={item.id} challenge={item}></ChallengeItem>
-            );
-          })}
-        </ol>
-      </ChallengesTabs>
-    </div>
+    <>
+      <div id='challenges'>
+        {isPending && (
+          <div className='center'>
+            <LoadingIndicator />
+          </div>
+        )}
+        {isError && (
+          <ErrorBlock
+            title='Failed to fetch challenges.'
+            message={error.info?.message || "Please try again later ;)"}
+          />
+        )}
+        {isSuccess && (
+          <ChallengesTabs>
+            <ol className='challenge-items'>
+              {challenges.length > 0 &&
+                challenges.map((item) => {
+                  return (
+                    <ChallengeItem
+                      key={item.id}
+                      challenge={item}
+                    ></ChallengeItem>
+                  );
+                })}
+            </ol>
+          </ChallengesTabs>
+        )}
+      </div>
+    </>
   );
 }

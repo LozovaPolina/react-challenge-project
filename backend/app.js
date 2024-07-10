@@ -37,16 +37,18 @@ app.get('/challenges', async (req, res) => {
     challenges = challenges.slice(challenges.length - max, challenges.length);
   }
 
-  res.json({
-    challenges: challenges.map((challenge) => ({
-      id: challenge.id,
-      title: challenge.title,
-      image: challenge.image,
-      deadline: challenge.deadline,
-      description: challenge.description,
-      status: challenge.status,
-    })),
-  });
+  setTimeout(() => {
+    res.json({
+      challenges: challenges.map((challenge) => ({
+        id: challenge.id,
+        title: challenge.title,
+        image: challenge.image,
+        deadline: challenge.deadline,
+        description: challenge.description,
+        status: challenge.status,
+      })),
+    });
+  }, 1000);
 });
 
 app.get('/challenges/images', async (req, res) => {

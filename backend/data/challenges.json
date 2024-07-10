@@ -1,1 +1,42 @@
-[{"id":"e1","title":"Master a Guitar Solo","description":"Learn and master a complex guitar solo within two weeks. The solo includes advanced techniques such as sweep picking, tapping, and alternate picking. Daily practice of at least one hour is required, along with recording progress and seeking feedback from a guitar mentor.","deadline":"2024-07-23","image":"playing-guitar.png","status":"failed"},{"id":"e3","title":"Master Advanced Yoga Poses","description":"Achieve proficiency in advanced yoga poses such as headstands, backbends, and arm balances within six months. Practice daily, attend specialized workshops, and focus on flexibility, strength, and balance.","deadline":"2024-12-31","image":"playing-guitar.png","status":"completed"},{"id":"e4","title":"Write a Fantasy Novel","description":"Write and complete a fantasy novel of at least 80,000 words within one year. Plan the plot, develop characters, and create a detailed world setting. Dedicate regular time for writing, editing, and revising the manuscript.","deadline":"2025-07-09","image":"playing-guitar.png","status":"active"},{"id":"1313","title":"Learn Spanish Fluently","description":"Achieve fluency in Spanish within one year through daily practice sessions, language classes, and immersion experiences. Focus on speaking, listening, reading, and writing skills, with a goal to comfortably hold conversations and understand native speakers.","deadline":"2024-07-09","image":"playing-guitar.png","status":"completed"},{"id":"3546","title":"title","description":"123321","deadline":"3333-02-03","image":"cooking.png","status":"active"}]
+[
+  {
+    "id": "e1",
+    "title": "Master a Guitar Solo",
+    "description": "Learn and master a complex guitar solo within two weeks. The solo includes advanced techniques such as sweep picking, tapping, and alternate picking. Daily practice of at least one hour is required, along with recording progress and seeking feedback from a guitar mentor.",
+    "deadline": "2024-07-23",
+    "image": "playing-guitar.png",
+    "status": "failed"
+  },
+  {
+    "id": "e3",
+    "title": "Master Advanced Yoga Poses",
+    "description": "Achieve proficiency in advanced yoga poses such as headstands, backbends, and arm balances within six months. Practice daily, attend specialized workshops, and focus on flexibility, strength, and balance.",
+    "deadline": "2024-12-31",
+    "image": "playing-guitar.png",
+    "status": "completed"
+  },
+  {
+    "id": "e4",
+    "title": "Write a Fantasy Novel",
+    "description": "Write and complete a fantasy novel of at least 80,000 words within one year. Plan the plot, develop characters, and create a detailed world setting. Dedicate regular time for writing, editing, and revising the manuscript.",
+    "deadline": "2025-07-09",
+    "image": "playing-guitar.png",
+    "status": "active"
+  },
+  {
+    "id": "1313",
+    "title": "Learn Spanish Fluently",
+    "description": "Achieve fluency in Spanish within one year through daily practice sessions, language classes, and immersion experiences. Focus on speaking, listening, reading, and writing skills, with a goal to comfortably hold conversations and understand native speakers.",
+    "deadline": "2024-07-09",
+    "image": "playing-guitar.png",
+    "status": "completed"
+  },
+  {
+    "id": "3546",
+    "title": "title",
+    "description": "123321",
+    "deadline": "3333-02-03",
+    "image": "cooking.png",
+    "status": "active"
+  }
+]

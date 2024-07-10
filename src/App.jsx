@@ -5,7 +5,9 @@ import store from "./store/index";
 import ChallengesPage from "./pages/Challenges";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./util/http";
-import NewChallenge from "./components/NewChallenge";
+import { lazy, Suspense } from "react";
+
+const NewChallenge = lazy(() => import("./components/NewChallenge"));
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "new",
-        element: <NewChallenge />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <NewChallenge />
+          </Suspense>
+        ),
       },
     ],
   },
