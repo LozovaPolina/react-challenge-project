@@ -88,9 +88,7 @@ app.post('/challenges', async (req, res) => {
     !challenge.title?.trim() ||
     !challenge.description?.trim() ||
     !challenge.deadline?.trim() ||
-    !challenge.time?.trim() ||
-    !challenge.image?.trim() ||
-    !challenge.location?.trim()
+    !challenge.image?.trim()
   ) {
     return res.status(400).json({ message: 'Invalid data provided.' });
   }
@@ -101,13 +99,16 @@ app.post('/challenges', async (req, res) => {
   const newchallenge = {
     id: Math.round(Math.random() * 10000).toString(),
     ...challenge,
+    status: 'active',
   };
 
   challenges.push(newchallenge);
 
   await fs.writeFile('./data/challenges.json', JSON.stringify(challenges));
 
-  res.json({ challenge: newchallenge });
+  setTimeout(() => {
+    res.json({ challenge: newchallenge });
+  }, 1000);
 });
 
 app.put('/challenges', async (req, res) => {
