@@ -1,10 +1,6 @@
 [
   {
-    "path": "city.jpg",
-    "caption": "People walking through a city buzzing with life at night."
-  },
-  {
-    "path": "constructing.jpg",
+    "path": "constructing.png",
     "caption": "constructing"
   },
   {
@@ -12,23 +8,19 @@
     "caption": "cooking"
   },
   {
-    "path": "hero.png",
-    "caption": "hero"
-  },
-  {
-    "path": "playing-guitar.jpg",
+    "path": "playing-guitar.png",
     "caption": "playing-guitar."
   },
   {
-    "path": "romantic-walk.jpg",
+    "path": "romantic-walk.png",
     "caption": "romantic-walk"
   },
   {
-    "path": "working-on-computer.jpg",
+    "path": "working-on-computer.png",
     "caption": "working-on-computer"
   },
   {
-    "path": "working-out.jpg",
+    "path": "working-out.png",
     "caption": "working-out"
   }
 ]
