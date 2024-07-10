@@ -5,6 +5,7 @@ import store from "./store/index";
 import ChallengesPage from "./pages/Challenges";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./util/http";
+import NewChallenge from "./components/NewChallenge";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,12 @@ const router = createBrowserRouter([
   {
     path: "/challenges",
     element: <ChallengesPage />,
+    children: [
+      {
+        path: "new",
+        element: <NewChallenge />,
+      },
+    ],
   },
 ]);
 

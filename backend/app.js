@@ -42,8 +42,8 @@ app.get('/challenges', async (req, res) => {
       id: challenge.id,
       title: challenge.title,
       image: challenge.image,
-      date: challenge.date,
-      location: challenge.location,
+      deadline: challenge.deadline,
+      description: challenge.description,
       status: challenge.status,
     })),
   });
@@ -87,7 +87,7 @@ app.post('/challenges', async (req, res) => {
   if (
     !challenge.title?.trim() ||
     !challenge.description?.trim() ||
-    !challenge.date?.trim() ||
+    !challenge.deadline?.trim() ||
     !challenge.time?.trim() ||
     !challenge.image?.trim() ||
     !challenge.location?.trim()

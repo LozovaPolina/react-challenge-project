@@ -14,14 +14,14 @@ const challengesSlice = createSlice({
     setChallenges(state, action) {
 
       const findItems = (status) => action.payload.challenges.filter((item) => item.status === status);
-
       state.active = findItems('active');
       state.completed = findItems('completed');
       state.failed = findItems('failed');
     },
     setSelectedTab(state, action) {
       state.selectedType = action.payload.selectedType
-    }
+    },
+
   }
 });
 
