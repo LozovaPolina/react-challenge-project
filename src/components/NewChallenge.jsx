@@ -31,12 +31,13 @@ export default function NewChallenge() {
     mutationFn: createNewChallenge,
     onSuccess: () => {
       queryClient.invalidateQueries(["challenges"]);
-      onClosoHandler();
+      onCloseHandler();
     },
   });
 
   const navigate = useNavigate();
-  function onClosoHandler() {
+
+  function onCloseHandler() {
     navigate("../");
   }
   function handleSubmit(event) {
@@ -51,7 +52,7 @@ export default function NewChallenge() {
   }
 
   return (
-    <Modal title='New Challenge' onClose={onClosoHandler}>
+    <Modal title='New Challenge' onClose={onCloseHandler}>
       <form id='new-challenge' onSubmit={handleSubmit}>
         <p>
           <label htmlFor='title'>Title</label>
@@ -93,7 +94,9 @@ export default function NewChallenge() {
         </ul>
 
         <p className='new-challenge-actions'>
-          <button type='button'>Cancel</button>
+          <button type='button' onClick={onCloseHandler}>
+            Cancel
+          </button>
           <button disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Add Challenge"}
           </button>

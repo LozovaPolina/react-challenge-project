@@ -54,7 +54,9 @@ export default function ChallengeItem({ challenge }) {
             </p>
           </div>
         </header>
-        <div className='challenge-item-details'>
+        <div
+          className={`challenge-item-details ${isExpanded ? "expanded" : ""}`}
+        >
           <p>
             <button onClick={onDetailsHandler}>
               View Details{" "}
