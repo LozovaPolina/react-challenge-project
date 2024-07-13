@@ -7,6 +7,7 @@ import ChallengesTabs from "./ChallengesTabs";
 import ChallengeItem from "./ChallengesItem";
 import LoadingIndicator from "./UI/LoadingIndicator";
 import ErrorBlock from "./UI/ErrorBlock";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Challenges() {
   const { data, isPending, isError, error, isSuccess } = useQuery({
@@ -40,19 +41,28 @@ export default function Challenges() {
             message={error.info?.message || "Please try again later ;)"}
           />
         )}
+
         {isSuccess && (
           <ChallengesTabs>
-            <ol className='challenge-items'>
-              {challenges.length > 0 &&
-                challenges.map((item) => {
-                  return (
-                    <ChallengeItem
-                      key={item.id}
-                      challenge={item}
-                    ></ChallengeItem>
-                  );
-                })}
-            </ol>
+            {challenges.length > 0 && (
+              <ol className='challenge-items'>
+                <AnimatePresence>
+                  {challenges.map((item) => (
+                    <ChallengeItem key={item.id} challenge={item} />
+                  ))}
+                </AnimatePresence>
+              </ol>
+            )}
+            {challenges.length === 0 && (
+              <motion.p
+                key='fallback'
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                You have not added a challenge yet.
+              </motion.p>
+            )}
           </ChallengesTabs>
         )}
       </div>

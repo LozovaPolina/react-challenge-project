@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Badge from "./Badge";
 
 export default function TabsItem({
@@ -13,9 +14,14 @@ export default function TabsItem({
         onClick={onSelect}
       >
         {children}
-        <Badge caption={badgeCaption}></Badge>
+        <Badge
+          key={`${badgeCaption}_${children}`}
+          caption={badgeCaption}
+        ></Badge>
       </button>
-      {isSelected && <div className='active-tab-indicator' />}
+      {isSelected && (
+        <motion.div layoutId='tab-indicator' className='active-tab-indicator' />
+      )}
     </li>
   );
 }

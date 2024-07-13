@@ -14,6 +14,11 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #main-header {
   display: flex;
   justify-content: space-between;
@@ -30,6 +35,7 @@ body {
   height: 60vh;
   margin: 2rem auto;
   object-fit: cover;
+
 }
 
 #main-header h1 {
@@ -280,12 +286,8 @@ main {
   display: inline-block;
   font-size: 0.85rem;
   margin-left: 0.25rem;
-  transition: transform 0.3s ease-out;
 }
 
-.challenge-item-details.expanded .challenge-item-details-icon {
-  transform: rotate(180deg);
-}
 
 .challenge-item-description {
   margin: 0;
@@ -314,20 +316,9 @@ main {
   width: 30rem;
   max-width: 90%;
   z-index: 10;
-  animation: slide-up-fade-in 0.3s ease-out forwards;
+
 }
 
-@keyframes slide-up-fade-in {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
 .modal h2 {
   margin-top: 0;
